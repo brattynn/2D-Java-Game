@@ -2,10 +2,12 @@ package com.pd;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.io.Serial;
 
 //Main class
 public class Game extends Canvas implements Runnable {
 
+    @Serial
     private static final long serialVersionUID = 1550691097823471818L;
 
     //Create the Aspect Ratio
@@ -41,7 +43,7 @@ public class Game extends Canvas implements Runnable {
         double amountOfTicks = 60.0;				//Targets 60 game logic updates per second
         double ns = 1000000000 / amountOfTicks;		//How many nanoseconds should pass between ticks
         double delta = 0;							//Accumulates time to know when to tick
-        long timer = System.currentTimeMillis();	//Used to count one second intervals
+        long timer = System.currentTimeMillis();	//Used to count one-second intervals
         int frames = 0;								//Counts how many frames were rendered this second
 
         //This part checks how much real time has passed since the last frame and adds it into delta.
